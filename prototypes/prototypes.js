@@ -31,3 +31,6 @@ Animal.prototype.eat = function () {
 
 const a = new Animal("Waffle");
 a.eat(); // AHHH.. waffles eating!
+
+let empty = {};
+console.log(empty.notAProperty);

@@ -16,6 +16,13 @@ console.log(empty.toString()); //property of Objects
 // > [object Object]
 ```
 
-* Almost all objects have a prototype. A prototype is another object that is used as a fallback source of property.
-* If an object doesn't have that property, its prototype will be searched for that property, then the prototype's prototype, and so on.
-* Think of prototypes as a container for the properties that are shared
+* Almost all objects have a prototype. A prototype is another object that is used as a fallback source of properties.
+* If an object doesn't have that property, its prototype will be searched for that property, then the prototype's prototype, and so on until the property is found or undefined.
+
+``` JavaScript
+let empty = {};
+console.log(empty.notAProperty);
+// > undefined
+```
+
+* Think of prototypes as a container for the properties that are shared.
