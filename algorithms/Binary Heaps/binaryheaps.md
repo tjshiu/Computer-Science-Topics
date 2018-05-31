@@ -19,7 +19,7 @@
 
 * Use an array to get to the left and right
 * We do not need a node class
-* parent = (index - 2) / 2
+* parent = (index - 1) / 2
 * index = index
 * leftChild = (index * 2) + 1
 * rightChild = (index * 2) + 2
