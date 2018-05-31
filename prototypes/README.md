@@ -37,11 +37,10 @@ Dog.prototype.bark = function () {
 };
 
 const d = new Dog("Sarah");
-d.bark();
+d.bark(); // "Sarah barked"
 
 
-/* Dog { woof: [Function] } points to the protoype of
-the constructor function(which is an object)
+/* Dog { woof: [Function] } points to the prototype of the constructor function(which is an object)
 */
 console.log(d.__proto__); // Dog { woof: [Function]}
 console.log(d.hasOwnProperty('bark')); // returns false
