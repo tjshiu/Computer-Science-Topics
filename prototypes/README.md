@@ -71,13 +71,13 @@ Animal.prototype.hello = function () {
   console.log(`Hello, my name is ${this.name}`);
 }
 
-//Must use the Animal.call(this, name) otherwise name will be undefined.
+//Must use the Animal.call(this, name) otherwise name will be undefined when using object.hello().
 function Dog(name) {
   Animal.call(this, name); //call super-constructor function on **the current 'Dog' instance**
 };
 
 Dog.prototype = Object.create(Animal.prototype); //Dog now inherits from Animal
-Dog.prototype.constructor = Dog //otherwise instances of Dog will have 'instance.constructor === Animal'
+Dog.prototype.constructor = Dog; //otherwise instances of Dog will have 'instance.constructor === Animal'
 
 Dog.prototype.bark = function () {
   console.log("Bark!");
@@ -89,3 +89,8 @@ fido.bark();
 fido.sayHello();
 ```
 This methods returns an entirely new object with its \_\_proto\_\_ set to whatever argument is passed to `Object.create`.
+
+Important things to highlight about this method:
+* `Dog.prototype = Object.create(Animal.prototype)` <- Setting the object's prototype to be another copy of the object's prototypal object.
+* `Dog.prototype.constructor = Dog` <- Ensured that the instance of Dog is not Animal and is actually Dog.
+* `Animal.call(this, name)` <- Used a super-constructor function
