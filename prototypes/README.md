@@ -26,3 +26,24 @@ console.log(empty.notAProperty);
 ```
 
 * Think of prototypes as a container for the properties that are shared.
+
+``` JavaScript
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype.bark = function () {
+  console.log(this.name + ' barked');
+};
+
+const d = new Dog("Sarah");
+d.bark();
+
+
+/* Dog { woof: [Function] } points to the protoype of
+the constructor function(which is an object)
+*/
+console.log(d.__proto__); // Dog { woof: [Function]}
+console.log(d.hasOwnProperty('bark')); // returns false
+console.log(d.__proto__.hasOwnProperty('bark')); //returns true;
+```
