@@ -2,7 +2,7 @@
 
 modern JavaScript = \_\_proto\_\_
 
-old JavaScript = "prototype"
+old JavaScript = .prototype
 
 
 * JavaScript uses prototypal inheritance.
@@ -18,6 +18,7 @@ console.log(empty.toString()); //property of Objects
 
 * Almost all objects have a prototype. A prototype is another object that is used as a fallback source of properties.
 * If an object doesn't have that property, its prototype will be searched for that property, then the prototype's prototype, and so on until the property is found or undefined.
+* Eventually the Object.prototype.\_\_proto\_\_ == \*null, and thus, the chain ends.
 
 ``` JavaScript
 let empty = {};
@@ -45,3 +46,46 @@ console.log(d.__proto__); // Dog { woof: [Function]}
 console.log(d.hasOwnProperty('bark')); // returns false
 console.log(d.__proto__.hasOwnProperty('bark')); //returns true;
 ```
+
+## Prototypal Inheritance
+
+If we want to set an object's prototype to be another object's prototype, we will have several methods to do this.
+
+``` JavaScript
+function Animal() {};
+function Dog() {};
+
+const myAnimal = new Animal(); //references Animal.prototype
+const myDog = newDog(); //references Dog.prototype
+```
+
+### `Object.create`
+
+Let's create an entirely new prototype object
+``` JavaScript
+function Animal (name) {
+  this.name = name;
+}
+
+Animal.prototype.hello = function () {
+  console.log(`Hello, my name is ${this.name}`);
+}
+
+//Must use the Animal.call(this, name) otherwise name will be undefined.
+function Dog(name) {
+  Animal.call(this, name); //call super-constructor function on **the current 'Dog' instance**
+};
+
+Dog.prototype = Object.create(Animal.prototype); //Dog now inherits from Animal
+Dog.prototype.constructor = Dog //otherwise instances of Dog will have 'instance.constructor === Animal'
+
+Dog.prototype.bark = function () {
+  console.log("Bark!");
+}
+
+const fido = new Dog('Fido');
+
+fido.bark();
+fido.sayHello();
+```
+This methods returns an entirely new object with its \_\_proto\_\_ set to whatever argument is passed to `Object.create`.
