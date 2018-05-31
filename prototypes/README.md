@@ -71,7 +71,7 @@ Animal.prototype.hello = function () {
   console.log(`Hello, my name is ${this.name}`);
 }
 
-//Must use the Animal.call(this, name) otherwise name will be undefined when using object.hello().
+//Must use the Animal.call(this, name) or this.name = name; otherwise this.name will be undefined when using object.hello().
 function Dog(name) {
   Animal.call(this, name); //call super-constructor function on **the current 'Dog' instance**
 };
