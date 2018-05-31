@@ -29,5 +29,5 @@ Animal.prototype.eat = function () {
   console.log(`Sorry ${this.name} is eating...`);
 };
 
-const a = new Animal();
-a.eat();
+const a = new Animal("Waffle");
+a.eat(); // AHHH.. waffles eating!
