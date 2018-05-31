@@ -68,7 +68,7 @@ function Animal (name) {
 }
 
 Animal.prototype.hello = function () {
-  console.log(`Hello, my name is ${this.name}`);
+  console.log(`Hello, my name is ${this.name}!`);
 }
 
 //Must use the Animal.call(this, name) or this.name = name; otherwise this.name will be undefined when using object.hello().
@@ -85,8 +85,8 @@ Dog.prototype.bark = function () {
 
 const fido = new Dog('Fido');
 
-fido.bark();
-fido.sayHello();
+fido.bark(); // Bark!
+fido.sayHello(); // Hello, my name is Fido!
 ```
 This methods returns an entirely new object with its \_\_proto\_\_ set to whatever argument is passed to `Object.create`.
 
