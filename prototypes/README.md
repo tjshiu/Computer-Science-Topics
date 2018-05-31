@@ -1,4 +1,4 @@
-# Protoypes
+# Prototypes
 
 modern JavaScript = \___proto___
 
