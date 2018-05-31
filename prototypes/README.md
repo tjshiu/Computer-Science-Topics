@@ -1,12 +1,12 @@
 # Protoypes
 
-modern JavaScript = __proto__
+modern JavaScript = \___proto___
 
 old JavaScript = "prototype"
 
 
 * JavaScript uses prototypal inheritance.
-* When created a new object with a constructor function, we are creating a prototype object that has a method "\__proto__" that points towards a prototype of the constructor. Yes, yes, it is very confusing wording, but look below.
+* When created a new object with a constructor function, we are creating a prototype object that has a method "\___proto___" that points towards a prototype of the constructor. Yes, yes, it is very confusing wording, but look below.
 
 ``` JavaScript
 let empty = {};
