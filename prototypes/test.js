@@ -7,8 +7,7 @@ Animal.prototype.hello = function () {
 }
 
 //Must use the Animal.call(this, name) otherwise name will be undefined.
-function Dog(name) {
-  Animal.call(this, name); //call super-constructor function on **the current 'Dog' instance**
+function Dog() { //call super-constructor function on **the current 'Dog' instance**
 };
 
 Dog.prototype = Object.create(Animal.prototype); //Dog now inherits from Animal

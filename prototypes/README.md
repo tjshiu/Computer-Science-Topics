@@ -91,6 +91,6 @@ fido.sayHello();
 This methods returns an entirely new object with its \_\_proto\_\_ set to whatever argument is passed to `Object.create`.
 
 Important things to highlight about this method:
-* `Dog.prototype = Object.create(Animal.prototype)` <- Setting the object's prototype to be another copy of the object's prototypal object.
+* `Dog.prototype = Object.create(Animal.prototype)` <- Setting the object's prototype to be another object copy of the object's prototypal object (different pointers).
 * `Dog.prototype.constructor = Dog` <- Ensured that the instance of Dog is not Animal and is actually Dog.
-* `Animal.call(this, name)` <- Used a super-constructor function
+* `Animal.call(this, name)` <- Used a super-constructor function to ensure that any methods on Animal will be able to access to this.name. You can also, place `this.name = name` in the Dog constructor method. However, if there is nothing called, this.name will be undefined even if an argument is passed.
