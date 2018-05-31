@@ -86,7 +86,7 @@ Dog.prototype.bark = function () {
 const fido = new Dog('Fido');
 
 fido.bark(); // Bark!
-fido.sayHello(); // Hello, my name is Fido!
+fido.hello(); // Hello, my name is Fido!
 ```
 This methods returns an entirely new object with its \_\_proto\_\_ set to whatever argument is passed to `Object.create`.
 
