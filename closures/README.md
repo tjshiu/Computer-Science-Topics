@@ -1,5 +1,7 @@
 # Closures
 
+A _closure_ is the combination of a function and the environment that it is declared in. Closures have access to variables from an enclosing scope --_environment_.
+
 ``` JavaScript
 function soundMaker(sound, times) {
 
@@ -19,7 +21,27 @@ Three levels of Scope for variables:
 * Variables that are defined within the function
 * Access to any variables, that are declared when the function was defined
   * The free variables are 'captured'.
+  * __data encapsulation__ is one of the benefits of closures. This allows the data to not be directly exposed.
   * We can change the value in the function, and the new value exists outside of the function.
+
+### Data Encapsulation Examples
+``` JavaScript
+  function SpringfieldSchool() {
+    let staff = ['Seymour Skinner', 'Edna Krabappel'];
+    return {
+      getStaff: function() { console.log(staff) },
+      addStaff: function(name) { staff.push(name) }
+    }
+  }
+
+  let elementary = SpringfieldSchool()
+  console.log(elementary)        // { getStaff: ƒ, addStaff: ƒ }
+  console.log(staff)             // ReferenceError: staff is not defined
+  /* Closure allows access to the staff variable */
+  elementary.getStaff()          // ["Seymour Skinner", "Edna Krabappel"]
+  elementary.addStaff('Otto Mann')
+  elementary.getStaff()          // ["Seymour Skinner", "Edna Krabappel", "Otto Mann"]
+```
 
 
 ``` JavaScript
@@ -39,6 +61,48 @@ function summation(arr) {
 
 console.log(summation([1, 2, 3, 4])); //value is 24
 ```
+
+## Most Common Interview Problems
+
+Console will display "The value undefined is at index: 4"
+``` JavaScript
+const arr = [10, 12, 15, 21];
+for (var i = 0; i < arr.length; i++) {
+  setTimeout(function() {
+    console.log(`The value ${arr[i]} is at index: ${i}`);
+  }, (i+1) * 1000);
+}
+```
+
+### Why?
+This happens because each function executed within the loop will be executed after the whole loop has been completed, referencing to the last value store in i, which was 4.
+
+### Solution
+
+__IIFE (Immediately Invoked Function Expression)__
+``` JavaScript
+const arr = [10, 12, 15, 21];
+for (var i = 0; i < arr.length; i++) {
+  (function(j) {
+    setTimeout(function() {
+      console.log(`The value ${arr[j]} is at index: ${j}`);
+    }, j * 1000);
+  })(i) //Immediately Invoked Function
+}
+```
+
+OR
+
+__Declaring the i variable with let__
+``` JavaScript
+const arr = [10, 12, 15, 21];
+for (let i = 0; i < arr.length; i++) {
+  setTimeout(function() {
+    console.log(`The value ${arr[i]} is at index: ${i}`);
+  }, (i) * 1000);
+}
+```
+
 
 ## Callbacks
 

@@ -27,17 +27,33 @@
 //
 // console.log(summation([1, 2, 3, 4]));
 
-let callback = function() {
-  console.log('It has been 5 seconds!');
-};
+// let callback = function() {
+//   console.log('It has been 5 seconds!');
+// };
+//
+// let timeToWait = 5000; // ms
+//
+// setTimeout(callback, timeToWait);
+//
+// // more likely to see this syntax
+// setTimeout(function() {
+//   console.log("It has been 5 seconds!");
+// }, 5000);
+//
+// setTimeout(() => console.log("It has been 5 seconds!"), 5000);
 
-let timeToWait = 5000; // ms
+function SpringfieldSchool() {
+  let staff = ['Seymour Skinner', 'Edna Krabappel'];
+  return {
+    getStaff: function() { console.log(staff) },
+    addStaff: function(name) { staff.push(name) }
+  }
+}
 
-setTimeout(callback, timeToWait);
-
-// more likely to see this syntax
-setTimeout(function() {
-  console.log("It has been 5 seconds!");
-}, 5000);
-
-setTimeout(() => console.log("It has been 5 seconds!"), 5000);
+let elementary = SpringfieldSchool()
+console.log(elementary)        // { getStaff: ƒ, addStaff: ƒ }
+//console.log(staff)             // ReferenceError: staff is not defined
+/* Closure allows access to the staff variable */
+elementary.getStaff()          // ["Seymour Skinner", "Edna Krabappel"]
+elementary.addStaff('Otto Mann')
+elementary.getStaff()          // ["Seymour Skinner", "Edna Krabappel", "Otto Mann"]
