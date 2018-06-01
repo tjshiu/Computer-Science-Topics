@@ -47,8 +47,6 @@ minHeap.prototype = {
       let leftChildN = 2 * n + 1;
       let rightChildN = 2 * n + 2;
       let swap = null;
-
-      if (leftChild)
     }
   },
 
