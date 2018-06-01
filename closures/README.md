@@ -1,6 +1,6 @@
 # Closures
 
-A _closure_ is the combination of a function and the environment that it is declared in. Closures have access to variables from an enclosing scope --_environment_.
+A __closure__ is the combination of a function and the environment that it is declared in.  Closures have access to variables from an enclosing scope --__environment__. A closure "closes over" some local variables. This allows you to free yourself from having to worry about lifetimes of variables, but also allows fro some creative use of function values. Closures are nice to use for "freezing" the code.
 
 ``` JavaScript
 function soundMaker(sound, times) {
@@ -43,7 +43,7 @@ Three levels of Scope for variables:
   elementary.getStaff()          // ["Seymour Skinner", "Edna Krabappel", "Otto Mann"]
 ```
 
-
+### Captured Free variables
 ``` JavaScript
 function summation(arr) {
   let sum = 1;
@@ -60,6 +60,17 @@ function summation(arr) {
 }
 
 console.log(summation([1, 2, 3, 4])); //value is 24
+```
+### Freezing functions
+``` JavaScript
+function multiplier(factor) {
+  return function(number) {
+    return number * factor;
+  };
+}
+
+let triple = multiplier(3); // Frozen function!!!!!
+console.log(triple(5)); //prints out 15.
 ```
 
 ## Most Common Interview Problems
@@ -94,6 +105,7 @@ for (var i = 0; i < arr.length; i++) {
 OR
 
 __Declaring the i variable with let__
+This is because there is a new scope each time you go through. There is a new local instance of memory for let.
 ``` JavaScript
 const arr = [10, 12, 15, 21];
 for (let i = 0; i < arr.length; i++) {

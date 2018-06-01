@@ -42,18 +42,27 @@
 //
 // setTimeout(() => console.log("It has been 5 seconds!"), 5000);
 
-function SpringfieldSchool() {
-  let staff = ['Seymour Skinner', 'Edna Krabappel'];
-  return {
-    getStaff: function() { console.log(staff) },
-    addStaff: function(name) { staff.push(name) }
-  }
+// function SpringfieldSchool() {
+//   let staff = ['Seymour Skinner', 'Edna Krabappel'];
+//   return {
+//     getStaff: function() { console.log(staff) },
+//     addStaff: function(name) { staff.push(name) }
+//   }
+// }
+//
+// let elementary = SpringfieldSchool()
+// console.log(elementary)        // { getStaff: ƒ, addStaff: ƒ }
+// //console.log(staff)             // ReferenceError: staff is not defined
+// /* Closure allows access to the staff variable */
+// elementary.getStaff()          // ["Seymour Skinner", "Edna Krabappel"]
+// elementary.addStaff('Otto Mann')
+// elementary.getStaff()          // ["Seymour Skinner", "Edna Krabappel", "Otto Mann"]
+
+function multiplier(factor) {
+  return function(number) {
+    return number * factor;
+  };
 }
 
-let elementary = SpringfieldSchool()
-console.log(elementary)        // { getStaff: ƒ, addStaff: ƒ }
-//console.log(staff)             // ReferenceError: staff is not defined
-/* Closure allows access to the staff variable */
-elementary.getStaff()          // ["Seymour Skinner", "Edna Krabappel"]
-elementary.addStaff('Otto Mann')
-elementary.getStaff()          // ["Seymour Skinner", "Edna Krabappel", "Otto Mann"]
+let triple = multiplier(3);
+console.log(triple(5)); //prints out 15. 
