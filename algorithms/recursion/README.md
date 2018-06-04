@@ -33,8 +33,8 @@ __Disadvantages of Recursive Programming over Iterative Programming__
 
 __Advantages of Recursive Programming over Iterative Programming__
 * Clean and simple way to write code
-* Some are inherently recursive like tree traversals, Tower of Hanoi, etc.
-
+* Some problems are inherently recursive like tree traversals, Tower of Hanoi, etc.
+git
 ## Recursion and Infinite Loops
 Each nested method call you make adds to the stack of open method calls. The elements of the stack are called stack frames, and they contain the local variables used by that method. If you get caught in a recursive loop, the stack will grow infinietly until the system runs out of memory, which is called __stack overflow__.
 
