@@ -16,6 +16,7 @@ __Pure Functions__  Functions whose return value depends solely on the values of
 
 * Predictable
 * Does not override/modify inputs(arguments)
+* May return a new object or answer.
 
 ``` JavaScript
 function square(x) {
@@ -48,3 +49,11 @@ function squareAll(items) {
 ```
 
 ### The Reducer Function
+
+The UI or view layer is most predictable when it is described as a pure function of the application state. The state mutations needs to be a pure function.
+
+What the reducer does takes the previous state and the action that is being dispatched and returns the next state of your application.
+
+Important that it does not modify the original state. It needs to return a new object. One of the things that makes redux fast is that it does not need to change everything. It makes small changes and if nothing else needs to be changed it just references the 'previous state'.
+
+### Writing a Counter Reducer with Tests
