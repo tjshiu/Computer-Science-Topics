@@ -30,4 +30,17 @@
 * __409 Conflict__ The request could not be completed due to a conflict with the current state of the resource. The code is only allowed in situations where it is expected that the user might be able to resolve the conflict and resubmit the request. Ideally, the response body SHOULD include enough information for the user to recognize the source of the conflict.
 
 ### 5xx Server Error
-* __500 Internal Server Error__ The server encountered an unexpected condition which prevented it from fulfilling the request. 
+* __500 Internal Server Error__ The server encountered an unexpected condition which prevented it from fulfilling the request.
+
+## HTTP vs HTTPS
+
+__HTTP: Clear Text__ Everything that is sent, it would be in the open.
+__HTTPS: Encrypted__ (secure) Computer will encrypt the information so that it does not look like any data.
+
+A website that is served by https protocol is encrypted. There is also a certificate that is issued from a valid certificate authority. Because it is encrypted, you know that it hasn't been tampered with. SSL certificates are the certificates for https. You want to have sha-2 to have the proper level of certification because google will no longer serve sha-1.
+
+Key points to know:
+__asymmetric key cryptography__ - Even if you can encrypt a message, you can't decrypt it. So let's say you want to lock the box (encrypt a message), but you can't open a closed box (cannot decrypt it).
+__public key__ - this is the key to encrypt a message (lock the box)
+__private key__ - this is the key to decrypt a message (open a closed box)
+__man-in-the-middle attack (MITM)__ - attack where the attacker secretly relays and possibly alters the communication between two parties who believe they are directly communicating to each other. The attacker must be able to intercept all relevant messages passing between the two victims and inject new ones.
