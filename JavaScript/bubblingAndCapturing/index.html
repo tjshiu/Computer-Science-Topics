@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TEST</title>
+    <style>
+      #event-p {
+        color: white;
+        background-color: red;
+      }
+
+      #event-div{
+        color: white;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div onclick="alert('The handler!')">
+      <em>If you click on <code>EM</code>, the handler on <code>DIV</code> runs.</em>
+    </div>
+
+    <form style="border: 1px solid red" onclick="alert('form')"> Form
+      <div style="border: 1px solid blue"onclick="alert('div')">DIV
+        <p style="border: 1px solid green" onclick="alert('p')">P</p>
+      </div>
+    </form>
+
+    <div id='event-div'>This is the text inside the <code>div<code>
+      <p id='event-p'>This is the text inside the <code>p<code></p>
+    </div>
+    <script>
+      document.getElementById('event-div').addEventListener('click', clicked);
+      document.getElementById('event-p').addEventListener('click', clicked);
+
+      function clicked(e) {
+        console.log('The click that was attached to', e.target.tagName, 'is currently at', e.currentTarget.tagName);
+      }
+    </script>
+  </body>
+</html>
