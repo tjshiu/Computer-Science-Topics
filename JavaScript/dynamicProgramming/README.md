@@ -34,6 +34,14 @@ Two different ways to store the values so that the values of a problem can be re
 1. __Memoization__: Top Down (Start at the top of the big call tree and Record answers as you get them)
 2. __Tabulation__: Bottom Up (Start at the bottom of the big call tree. Record all the answers you know you'll need and return the answer you want once you have it)
 
+| | __Memoization__ <br> Top Down | __Tabulation__ <br> Bottom Up|
+|---|---|---|
+|__State__| State transition relation is easy to think | State Transition relation is difficult to think |
+|__Code__| Code is easy and less complicated | Code gets complicated when lot of conditions are required |
+|__Speed__| Slow due to lot of recursive calls and return statements | Fast, as we directly access previous states from the table |
+|__Subproblem Solving__| If some subproblems in the subproblem space need not be solved at all, the memoized solution has the advantage of solving only those subproblems that are definitely required. | If all subproblems must be solved at least once, a bottom-up dynamic programming algorithm usually outperforms a top-down memoized algorithm by a constant factor |
+|__Table Entries__| Unlike the tabulated version, all entries of the lookup table are not necessarily filled in memoized version. The table is filled on demand | In tabulated version, starting from the first entry, all entries are filled one by one |
+
 __Memoization - Top Down Dynamic Programming__
 Let's use a top-down approach to optimize the example.
 
@@ -90,11 +98,3 @@ function fibonacci(n) {
 console.log(fibonacci(6));
 console.log(fibonacci(100));
 ```
-
-| | __Memoization__ | __Tabulation__ |
-|---|---|---|
-|__State__| State transition relation is easy to think | State Transition relation is difficult to think |
-|__Code__| Code is easy and less complicated | Code gets complicated when lot of conditions are required |
-|__Speed__| Slow due to lot of recursive calls and return statements | Fast, as we directly access previous states from the table |
-|__Subproblem Solving__| If some subproblems in the subproblem space need not be solved at all, the memoized solution has the advantage of solving only those subproblems that are definitely required. | If all subproblems must be solved at least once, a bottom-up dynamic programming algorithm usually outperforms a top-down memoized algorithm by a constant factor |
-|__Table Entries__| Unlike the tabulated version, all entries of the lookup table are not necessarily filled in memoized version. The table is filled on demand | In tabulated version, starting from the first entry, all entries are filled one by one |
