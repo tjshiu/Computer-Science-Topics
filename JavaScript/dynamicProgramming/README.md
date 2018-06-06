@@ -1,5 +1,7 @@
 # Dynamic Programming
 
+Dynamic Programming is an algorithmic paradigm that solves a given complex problem by breaking it into subproblems and storing the results of subproblems to avoid computing the same results again.
+
 Recursion can be a great for us to break apart problems into smaller chunks. However, this technique often comes with significant performance costs. For example...
 
 ``` JavaScript
@@ -12,18 +14,18 @@ function fibonacci(n) {
 console.log(fibonacci(6)); //8
 ```
 __The BAD__
-It runs in O(2^n) time. The call tree below shows how our stack will be called. As you can see below, we call `fibonacci(3)` 3 times. It would be better if we can store this data for later on. This idea is __memoization__.
+It runs in O(2^n) time. The call tree below shows how our stack will be called. As you can see below, we call `fibonacci(3)` 3 times. It would be better if we can store this data for later on. This idea is __memoization__. Look below and we can see that we are creating __overlapping subproblems__. Thus we are doing unnecessary computations again and again to have this slow run time.
 
 ``` JavaScript
-//            6
-//          /  \
-//        5      4
-//      /  \    / \
-//     4   3   3   2
-//    /\  /\  /\
-//   3 2 2 1 2 1
-//  /\
-// 2  1
+//                            fib(6)
+//                       /                  \
+//                  fib(5)                  fib(4)
+//                 /     \                 /      \
+//           fib(4)       fib(3)        fib(3)   fib(2)
+//          /    \        /   \         /   \
+//      fib(3) fib(2) fib(2) fib(1) fib(2) fib(1)
+//     /   \
+// fib(2)  fib(1)
 ```
 
 
@@ -98,3 +100,5 @@ function fibonacci(n) {
 console.log(fibonacci(6));
 console.log(fibonacci(100));
 ```
+
+## Overlapping Subproblems Property
