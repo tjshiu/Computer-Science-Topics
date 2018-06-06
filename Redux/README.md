@@ -139,3 +139,30 @@ document.addEventListener('click', () => {
 ```
 
 ### Implementing Store from Scratch
+
+``` JavaScript
+const createStore = (reducer) => {
+  let state;
+  let listeners = [];
+
+  const getState = () => state; //get current application state
+
+  const dispatch = (action) => { // change current application state due to actions
+    state = reducer(state, action);
+    listeners.forEach(listener => listener()); //notify every change listener by calling it
+  };
+
+  const subscribe = (listener) => { // re-render our application with the current state of the app
+    listeners.push(listener);
+    return () => { // removes the listener from the listener array
+      listeners = listeners.filter(l => l !== listener);
+    }
+  }
+
+  dispatch({}); // dummy action
+
+  return { getState, dispatch, subscribe };
+}
+```
+
+### React Counter Example
