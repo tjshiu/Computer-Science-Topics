@@ -90,3 +90,11 @@ function fibonacci(n) {
 console.log(fibonacci(6));
 console.log(fibonacci(100));
 ```
+
+| | __Memoization__ | __Tabulation__ |
+|---|---|---|
+|__State__| State transition relation is easy to think | State Transition relation is difficult to think |
+|__Code__| Code is easy and less complicated | Code gets complicated when lot of conditions are required |
+|__Speed__| Slow due to lot of recursive calls and return statements | Fast, as we directly access previous states from the table |
+|__Subproblem Solving__| If some subproblems in the subproblem space need not be solved at all, the memoized solution has the advantage of solving only those subproblems that are definitely required. | If all subproblems must be solved at least once, a bottom-up dynamic programming algorithm usually outperforms a top-down memoized algorithm by a constant factor |
+|__Table Entries__| Unlike the tabulated version, all entries of the lookup table are not necessarily filled in memoized version. The table is filled on demand | In tabulated version, starting from the first entry, all entries are filled one by one |
