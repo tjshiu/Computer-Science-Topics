@@ -27,4 +27,7 @@
 * __401 Unauthorized__ The request require user authentication. Similar to 403 Forbidden, but specifically for use when authentication is possible, but has failed or not yet been provided. The 401 response indicates that authorization has been refused for those credentials.
 * __403 Forbidden__ The server understood the request, but is refusing to fulfill it. Authorization will not help and the request SHOULD NOT be repeated. The request was a legal request, but unlike a 401 Unauthorized response, authentication will make no difference.
 * __404 Not Found__ The server has not found anything matching the Request-URI. The requested resource could not be found, but may be available again in the future. Commonly used when the server does not wish to reveal exactly why the request has been refused, or when no other response is applicable.
-* __409 Conflict__ The request could not be completed due to a conflict with the current state of the resource. The code is only allowed in situations where it is expected that the user might be able to resolve the conflict and resubmit the request. Ideally, the response body SHOULD include enough information for the user to recognize the source of the conflict. 
+* __409 Conflict__ The request could not be completed due to a conflict with the current state of the resource. The code is only allowed in situations where it is expected that the user might be able to resolve the conflict and resubmit the request. Ideally, the response body SHOULD include enough information for the user to recognize the source of the conflict.
+
+### 5xx Server Error
+* __400 Internal Server Error__ The server encountered an unexpected condition which prevented it from fulfilling the request. 
