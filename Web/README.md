@@ -12,7 +12,7 @@
 |7 | __Options__ <br> Describes the communication options for the target resource. |
 |8 | __Trace__ <br> Performs a message loop-back test along the path to the target resource
 
-## HTTP Status Codes
+## HTTP Status Codes (TOP 10 Codes)
 
 ### 2xx Success
 * __200 OK__ General status code and the most common code used to indicate success. The request has succeeded. The information returned with the response is dependent on the method used in the request(method examples: GET, HEAD, POST, TRACE, etc.)
@@ -20,4 +20,11 @@
 * __204 No Content__ The server successfully processed the request, but is not returning any content.
 
 ### 3xx Redirection
-* __304 Not Modified__ Indicates that the resource has not been modified since last requested. The 304 response MUST NOT contain a message-body and thus is always terminated by the first empty line after the header fields. 
+* __304 Not Modified__ Indicates that the resource has not been modified since last requested. The 304 response MUST NOT contain a message-body and thus is always terminated by the first empty line after the header fields.
+
+### 4xx Client Error
+* __400 Bad Request__ The request cannot be understood by the server due to malformed syntax. The client SHOULD NOT repeat teh request without modifications.
+* __401 Unauthorized__ The request require user authentication. Similar to 403 Forbidden, but specifically for use when authentication is possible, but has failed or not yet been provided. The 401 response indicates that authorization has been refused for those credentials.
+* __403 Forbidden__ The server understood the request, but is refusing to fulfill it. Authorization will not help and the request SHOULD NOT be repeated. The request was a legal request, but unlike a 401 Unauthorized response, authentication will make no difference.
+* __404 Not Found__ The server has not found anything matching the Request-URI. The requested resource could not be found, but may be available again in the future. Commonly used when the server does not wish to reveal exactly why the request has been refused, or when no other response is applicable.
+* __409 Conflict__ The request could not be completed due to a conflict with the current state of the resource. The code is only allowed in situations where it is expected that the user might be able to resolve the conflict and resubmit the request. Ideally, the response body SHOULD include enough information for the user to recognize the source of the conflict. 
