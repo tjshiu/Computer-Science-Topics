@@ -57,3 +57,85 @@ What the reducer does takes the previous state and the action that is being disp
 Important that it does not modify the original state. It needs to return a new object. One of the things that makes redux fast is that it does not need to change everything. It makes small changes and if nothing else needs to be changed it just references the 'previous state'.
 
 ### Writing a Counter Reducer with Tests
+``` Javascript
+function counter(state, action) {
+  if (typeof state === 'undefined') {
+    return 0;
+  }
+
+  if (action.type === 'INCREMENT') {
+    return state + 1;
+  } else if (action.type === 'DECREMENT') {
+    return state - 1;
+  } else {
+    return state;
+  }
+}
+
+//tests
+expect(
+  counter(0, {type: 'INCREMENT'})
+).toEqual(1);
+expect(
+  counter(1, {type: 'INCREMENT'})
+).toEqual(2);
+
+expect(
+  counter(2, {type: 'DECREMENT'})
+).toEqual(1);
+
+expect(
+  counter(1, {type: 'DECREMENT'})
+).toEqual(0);
+
+expect(
+  counter(1, {type: 'SOMETHING ELSE'})
+).toEqual(1);
+
+expect(
+  counter(undefined, {})
+).toEqual(0);
+```
+__Better ES6 syntax for reducer__
+``` JavaScript
+const counter = (state = 0, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1;
+    case 'DECREMENT':
+      return state - 1;
+    default:
+      return state;
+  }
+}
+```
+
+### Redux: Store Methods: getState(), dispatch(), and subscribe()
+
+The store binds together the three principles of redux. It holds the current state object. It lets you to dispatch actions. Also when you create it, you need to specify the reducer, which tells the how the state is updated with actions.
+
+Store has three important methods
+1. store.getState() - It retrieves the current state of the redux store
+2. store.dispatch() - It lets you dispatch actions to change the state of your application.
+3. store.subscribe(() => {}) - It allows you to register a callback that the redux store will call anytime an action has been dispatched. So that you can update the UI of your application to its current state.
+
+``` JavaScript
+const { createStore } = Redux; // ES6
+// var createStore = Redux.createStore; equivalent method
+// import {createStore} from 'redux'; npm or babel to transpile your ES6
+
+const store = createStore(counter);
+
+const render = () => {
+  document.body.innerText = store.getState();
+}
+
+store.subscribe(render);
+render();
+
+document.addEventListener('click', () => {
+  store.dispatch({ type: 'INCREMENT' });
+})
+```
+
+### Implementing Store from Scratch
