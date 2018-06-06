@@ -30,4 +30,4 @@
 * __409 Conflict__ The request could not be completed due to a conflict with the current state of the resource. The code is only allowed in situations where it is expected that the user might be able to resolve the conflict and resubmit the request. Ideally, the response body SHOULD include enough information for the user to recognize the source of the conflict.
 
 ### 5xx Server Error
-* __400 Internal Server Error__ The server encountered an unexpected condition which prevented it from fulfilling the request. 
+* __500 Internal Server Error__ The server encountered an unexpected condition which prevented it from fulfilling the request. 
