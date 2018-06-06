@@ -2,7 +2,7 @@
 
 ## `new`
 
-The `new` keyword invokes a function in a special way. Functions invoked using the  `new` keyword are called __constructor functions__.
+The `new` keyword invokes a function in a special way. Functions invoked using the  `new` keyword are called __constructor function__.
 
 So what does the `new` keyword actually do?
 1. Creates a new object
