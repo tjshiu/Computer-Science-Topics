@@ -2,7 +2,7 @@ function Animal(legs = 4) {
   this.legs = legs;
 }
 
-let notADog = Animal(); //invoking a normal Fucntion
+let notADog = Animal(); //invoking a normal Function
 console.log(notADog); // undefined
 
 let actualDog = new Animal(); //invoking a constructor function
