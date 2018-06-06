@@ -11,3 +11,10 @@
 |6 | __Connect__ <br> Establishes a tunnel to the server identified by the given URI.|
 |7 | __Options__ <br> Describes the communication options for the target resource. |
 |8 | __Trace__ <br> Performs a message loop-back test along the path to the target resource
+
+## HTTP Status Codes
+
+### 2xx Success
+* __200 OK__ General status code and the most common code used to indicate success. The request has succeeded. The information returned with the response is dependent on the method used in the request(method examples: GET, HEAD, POST, TRACE, etc.)
+* __201 Created__ The request has been fulfilled and resulted in a new resource being created. Successful creation occurred(via either POST or PUT). Set the Location header to contain a link to the newly-created resource(on POST). Response body content may or may not be present.
+* __204 No Content__ The server successfully processed the request, but is not returning any content.
