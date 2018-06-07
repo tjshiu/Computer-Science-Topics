@@ -2,6 +2,11 @@
 
 Dynamic Programming is an algorithmic paradigm that solves a given complex problem by breaking it into subproblems and storing the results of subproblems to avoid computing the same results again.
 
+Where to use Dynamic Programming?
+There are two main properties of a problem that suggest that the given problem can be solved using Dynamic Programming:
+1. Overlapping Subproblems
+2. Optimal Substructure
+
 Recursion can be a great for us to break apart problems into smaller chunks. However, this technique often comes with significant performance costs. For example...
 
 ``` JavaScript
@@ -13,6 +18,24 @@ function fibonacci(n) {
 
 console.log(fibonacci(6)); //8
 ```
+
+## Overlapping Subproblems Property
+
+There are a lot of unnecessary overlapping problems.
+The solution is to use memory to "remember the results". Do not solve the same problem again, just recall it from memory.
+Two methods of storing the results in memory.
+
+1. Memoization (Top-down)
+2. Tabulation (Bottom-up)
+
+__Dynaimc Programming vs. Divide and Conquer__
+Similarities: Both paradigms work by combining solutions to sub-problems.
+Differences: Dynamic Programming is mainly used when the overlapping subproblems property is satisfied.
+
+Examples: Binary Search, Fibonacci Series
+
+## Optimal Substructure Property
+
 __The BAD__
 It runs in O(2^n) time. The call tree below shows how our stack will be called. As you can see below, we call `fibonacci(3)` 3 times. It would be better if we can store this data for later on. This idea is __memoization__. Look below and we can see that we are creating __overlapping subproblems__. Thus we are doing unnecessary computations again and again to have this slow run time.
 
@@ -100,5 +123,3 @@ function fibonacci(n) {
 console.log(fibonacci(6));
 console.log(fibonacci(100));
 ```
-
-## Overlapping Subproblems Property
