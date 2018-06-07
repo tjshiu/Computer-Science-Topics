@@ -67,6 +67,6 @@ localStorage, sessionStorage, and cookies are all client storage solutions. Sess
 | __Accessible from__| Any window | Any Window | Same tab|
 | __Expires__| Manually set| Never | On tab Close |
 | __Storage Location__| Browser and Server | Browser only | Browser only |
-| __Sent with Requests | Yes | No | No |
+| __Sent with Requests__ | Yes | No | No |
 
 ### localStorage and sessionStorage
