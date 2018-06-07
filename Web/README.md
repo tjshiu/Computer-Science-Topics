@@ -57,3 +57,16 @@ __private key__ - this is the key to decrypt a message (open a closed box)
 __man-in-the-middle attack (MITM)__ - attack where the attacker secretly relays and possibly alters the communication between two parties who believe they are directly communicating to each other. The attacker must be able to intercept all relevant messages passing between the two victims and inject new ones.
 
 ## Difference between localStorage, sessionStorage, session, and cookies
+
+localStorage, sessionStorage, and cookies are all client storage solutions. Session data is held on the server where it remains under your direct control.
+
+| | Cookies | Local Storage | Session Storage |
+|---|---|---|---|
+| __Capacity__| 4 kb | 10mb | 5mb |
+| __Browsers__| HTML4 / HTML5 | HTML5 | HTML5|
+| __Accessible from__| Any window | Any Window | Same tab|
+| __Expires__| Manually set| Never | On tab Close |
+| __Storage Location__| Browser and Server | Browser only | Browser only |
+| __Sent with Requests | Yes | No | No |
+
+### localStorage and sessionStorage
