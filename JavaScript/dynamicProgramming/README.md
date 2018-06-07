@@ -36,6 +36,18 @@ Examples: Binary Search, Fibonacci Series
 
 ## Optimal Substructure Property
 
+A given problem is said to have the optimal substructure property if an optimal solution of the given problem can be obtained by using optimal solutions of its subproblems.
+
+For example:
+* __The Shortest Path Problem__
+    * if a node x lies in the shortest path from source node u to destination node v then, the shortest path from u to v is the combination of shortest path from u to x and shortest path from x to v.
+* All Pair Shortest Path
+    * Floyd-Warshall
+    * Bellman-Ford
+
+Counter Example:
+* __Longest Path Problem__ does NOT have the optimal substructure property. (Longest path without cycle between nodes). We know that other longer paths do not make other longest paths. It might even create a cycle. 
+
 __The BAD__
 It runs in O(2^n) time. The call tree below shows how our stack will be called. As you can see below, we call `fibonacci(3)` 3 times. It would be better if we can store this data for later on. This idea is __memoization__. Look below and we can see that we are creating __overlapping subproblems__. Thus we are doing unnecessary computations again and again to have this slow run time.
 
