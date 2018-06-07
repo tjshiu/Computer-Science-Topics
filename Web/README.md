@@ -3,8 +3,11 @@
 __Topics__
 
 [HTTP-Methods](#http---methods)
+
 [HTTP Status Codes - Top 10 codes](#http-status-codes)
+
 [HTTP vs HTTPS](#http-vs-https)
+
 [Difference between localStorage, sessionStorage, session, and cookies](#difference-between-localStorage,-sessionStorage,-session,-and-cookies)
 
 
