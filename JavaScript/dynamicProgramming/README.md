@@ -37,7 +37,7 @@ For example:
 Counter Example:
 * __Longest Path Problem__ does NOT have the optimal substructure property. (Longest path without cycle between nodes). We know that other longer paths do not make other longest paths. It might even create a cycle.
 
-### Example of Dynamic Programming: 
+### Example of Dynamic Programming:
 
 Recursion can be a great for us to break apart problems into smaller chunks. However, this technique often comes with significant performance costs. For example...
 
@@ -82,6 +82,7 @@ Two different ways to store the values so that the values of a problem can be re
 |__Table Entries__| Unlike the tabulated version, all entries of the lookup table are not necessarily filled in memoized version. The table is filled on demand | In tabulated version, starting from the first entry, all entries are filled one by one |
 
 __Memoization - Top Down Dynamic Programming__
+Here we keep a lookup table or a cache of any answers that we have. We also call function multiple times and makes the calls until it gets to the bottom. As we start from the bottom and go to the top, we store the values in our lookup table or cache. 
 Let's use a top-down approach to optimize the example.
 
 1. if n = 1 or n = 2, return 1
