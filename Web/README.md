@@ -2,11 +2,11 @@
 
 __Topics__
 
-[HTTP-Methods](#HTTP - Methods)
+[HTTP-Methods](#http---methods)
 
-[HTTP Status Codes - Top 10 codes](#HTTP Status Codes (TOP 10 Codes))
+[HTTP Status Codes - Top 10 codes](#http-status-codes)
 
-[HTTP vs HTTPS](#HTTP vs HTTPS)
+[HTTP vs HTTPS](#http-vs-https)
 
 [Difference between localStorage, sessionStorage, session, and cookies](#Difference between localStorage, sessionStorage, session, and cookies)
 
@@ -23,7 +23,7 @@ __Topics__
 |7 | __Options__ <br> Describes the communication options for the target resource. |
 |8 | __Trace__ <br> Performs a message loop-back test along the path to the target resource
 
-## HTTP Status Codes (TOP 10 Codes)
+## HTTP Status Codes
 
 ### 2xx Success
 * __200 OK__ General status code and the most common code used to indicate success. The request has succeeded. The information returned with the response is dependent on the method used in the request(method examples: GET, HEAD, POST, TRACE, etc.)
