@@ -62,7 +62,7 @@ localStorage, sessionStorage, and cookies are all client storage solutions. Sess
 
 | | Cookies | Local Storage | Session Storage |
 |---|---|---|---|
-| __Capacity__| 4 kb | 10mb | 5mb |
+| __Capacity__| 4kb | 10mb | 5mb |
 | __Browsers__| HTML4 / HTML5 | HTML5 | HTML5|
 | __Accessible from__| Any window | Any Window | Same tab|
 | __Expires__| Manually set| Never | On tab Close |
@@ -70,3 +70,11 @@ localStorage, sessionStorage, and cookies are all client storage solutions. Sess
 | __Sent with Requests__ | Yes | No | No |
 
 ### localStorage and sessionStorage
+
+Local storage is best for anything else the cookie does not used. Both the localStorage and sessionStorage are similiar. Both are relatively new APIs. sessionStorage, is only available for the duration of the browser session and is deleted when the tab or window is closed. If you want your data to be available on an ogoing basis then localStorage is preferable to sessionStorage. However, both can be cleared by the user, so it's important to not rely on it's existence for a long time.
+
+Also both are perfect for persisting non-sensitive data needed within client scripts between pages. The data stored in localStorage and sessionStorage can easily be read or changed from within the client/browser so it should not be relied upon for storage of sensitive or security related data within applications. 
+
+### Cookies
+
+Cookie information is sent to the server. Cookies is best for data that has to be accessed by the server and the local machine.
