@@ -144,3 +144,11 @@ function fibonacci(n) {
 console.log(fibonacci(6));
 console.log(fibonacci(100));
 ```
+
+### Practice Problem: Binomial Coefficient
+
+__Combinations__ - When forming permutations, the order in which the elements are listed is important, but there are many cases when we are interested only in which elements are selected and we do not care about the order. For example, when playing poker, a hand consists of five cards dealt from a standard 52-card deck. The order in which the cords arrive in a hand does not matter, only the final selection of the five cards are important. When order is not important, the selection is called a combination rather than a permutation. More carefully, an r- combination from an n-set is an r-subset of the n-set. In other words, an r-combination of an n-set is an unordered selection of r distinct elements from the n-set.
+
+An example:
+
+C(n, r)  =   ( n <br> r )  =  P(n, r) / r!   =     n! / (r!(n - r)!)
