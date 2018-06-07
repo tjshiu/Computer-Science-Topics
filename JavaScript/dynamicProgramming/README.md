@@ -151,4 +151,7 @@ __Combinations__ - When forming permutations, the order in which the elements ar
 
 An example:
 
-C(n, r)  =   ( n <br> r )  =  P(n, r) / r!   =     n! / (r!(n - r)!)
+C(n, r)   =  P(n, r) / r!   =     n! / (r!(n - r)!)
+
+Suppose we have a club of 10 members. If we want to select a committee of 3 members, then there are
+C(10, 4) = (10!)/ (3!(10-3)!) = 10 * 9 * 8  / (3 * 2 * 1) = 120
