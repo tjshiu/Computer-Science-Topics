@@ -82,7 +82,7 @@ Two different ways to store the values so that the values of a problem can be re
 |__Table Entries__| Unlike the tabulated version, all entries of the lookup table are not necessarily filled in memoized version. The table is filled on demand | In tabulated version, starting from the first entry, all entries are filled one by one |
 
 __Memoization - Top Down Dynamic Programming__
-Here we keep a lookup table or a cache of any answers that we have. We also call function multiple times and makes the calls until it gets to the bottom. As we start from the bottom and go to the top, we store the values in our lookup table or cache. 
+Here we keep a lookup table or a cache of any answers that we have. We also call function multiple times and makes the calls until it gets to the bottom. As we start from the bottom and go to the top, we store the values in our lookup table or cache.
 Let's use a top-down approach to optimize the example.
 
 1. if n = 1 or n = 2, return 1
@@ -113,6 +113,12 @@ console.log(example.fibonacci(100)) // 354224848179262000000
 ```
 
 __Tabulation - Bottom Up Dynamic Programming__
+
+Steps
+1. Begin with initializing the base values of i
+2. Run a loop that iterates over the remaining values of i
+3. At every iteration i, f(n) updates the ith entry in the lookup table or cache by combining the solutions to the previously solved subproblems.
+4. Finally, f(n) returns table[n]
 
 With bottom up dynamic programming, we will still use a `this.cache`, but instead of writing `cache` as we're trying to find `fibonacci(n)`, we build the `cache` first and then return the  desired entry, `cache[n]`
 
