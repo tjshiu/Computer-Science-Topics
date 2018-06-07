@@ -1,5 +1,12 @@
 # Web
 
+__Topics__
+[HTTP-Methods](## HTTP - Methods)
+[HTTP Status Codes - Top 10 codes](## HTTP Status Codes (TOP 10 Codes))
+[HTTP vs HTTPS](## HTTP vs HTTPS)
+[Difference between localStorage, sessionStorage, session, and cookies](## Difference between localStorage, sessionStorage, session, and cookies)
+
+
 ## HTTP - Methods
 | S.N. | Method and Description | Other Notes|
 |---|---|---|
@@ -44,3 +51,5 @@ __asymmetric key cryptography__ - Even if you can encrypt a message, you can't d
 __public key__ - this is the key to encrypt a message (lock the box)
 __private key__ - this is the key to decrypt a message (open a closed box)
 __man-in-the-middle attack (MITM)__ - attack where the attacker secretly relays and possibly alters the communication between two parties who believe they are directly communicating to each other. The attacker must be able to intercept all relevant messages passing between the two victims and inject new ones.
+
+## Difference between localStorage, sessionStorage, session, and cookies
