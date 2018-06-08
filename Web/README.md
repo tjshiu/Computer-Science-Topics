@@ -10,6 +10,8 @@ __Topics__
 
 [Difference between localStorage, sessionStorage, session, and cookies](#difference-between-localStorage,-sessionStorage,-session,-and-cookies)
 
+[XXS](#xss)
+
 
 ## HTTP - Methods
 | S.N. | Method and Description | Other Notes|
@@ -73,8 +75,14 @@ localStorage, sessionStorage, and cookies are all client storage solutions. Sess
 
 Local storage is best for anything else the cookie does not used. Both the localStorage and sessionStorage are similiar. Both are relatively new APIs. sessionStorage, is only available for the duration of the browser session and is deleted when the tab or window is closed. If you want your data to be available on an ogoing basis then localStorage is preferable to sessionStorage. However, both can be cleared by the user, so it's important to not rely on it's existence for a long time.
 
-Also both are perfect for persisting non-sensitive data needed within client scripts between pages. The data stored in localStorage and sessionStorage can easily be read or changed from within the client/browser so it should not be relied upon for storage of sensitive or security related data within applications. 
+Also both are perfect for persisting non-sensitive data needed within client scripts between pages. The data stored in localStorage and sessionStorage can easily be read or changed from within the client/browser so it should not be relied upon for storage of sensitive or security related data within applications.
 
 ### Cookies
 
 Cookie information is sent to the server. Cookies is best for data that has to be accessed by the server and the local machine.
+
+## XSS
+
+Cross-Site Scripting Attack (XSS) refers to client-side code injection attack where in an attacker can execute malicious scripts (also commonly referred to as malicious payload) into a legitimate website or web application. XSS is amongst the most rampant of web application vulnerabilities and occurs when a web application makes use of unvalidated or unencoded user input within the output it generates.
+
+XSS uses a legitimate website and inserts script to attack. Thus, this is a direct attack to the user, and they are then able to get vulnerable information. Usually we see these attacks with script being entered in the comments. 
