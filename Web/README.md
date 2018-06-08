@@ -85,4 +85,11 @@ Cookie information is sent to the server. Cookies is best for data that has to b
 
 Cross-Site Scripting Attack (XSS) refers to client-side code injection attack where in an attacker can execute malicious scripts (also commonly referred to as malicious payload) into a legitimate website or web application. XSS is amongst the most rampant of web application vulnerabilities and occurs when a web application makes use of unvalidated or unencoded user input within the output it generates.
 
-XSS uses a legitimate website and inserts script to attack. Thus, this is a direct attack to the user, and they are then able to get vulnerable information. Usually we see these attacks with script being entered in the comments. 
+XSS uses a legitimate website and inserts script to attack. Thus, this is a direct attack to the user, and they are then able to get vulnerable information. Usually we see these attacks with script being entered in the comments.
+
+XSS attack needs three actors: __the website, the victim__ and __the attacker__.
+
+1. The attacker injects a payload in the website’s database by submitting a vulnerable form with some malicious JavaScript
+2. The victim requests the web page from the website
+3. The website serves the victim’s browser the page with the attacker’s payload as part of the HTML body.
+4. The victim’s browser will execute the malicious script inside the HTML body. In this case it would send the victim’s cookie to the attacker’s server. The attacker now simply needs to extract the victim’s cookie when the HTTP request arrives to the server, after which the attacker can use the victim’s stolen cookie for impersonation.
