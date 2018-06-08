@@ -24,6 +24,26 @@ Binary (base- 2)
 The very first bit show's if it's positive or negative.
 
 | Number | negative | 2^6 <br> =64| 2^5 <br> =32| 2^4 <br> =16| 2^3 <br> =8| 2^2 <br> =4| 2^1 <br> =2| 2^0 <br> =1|
-|---|---|---|---|---|---|---|---|---|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | __18__ | 0 | 0 | 0 | 1 | 0 | 0 | 1 | 0 |
 | __-18__ | 1 | 1 | 1 | 0 | 1 | 1 | 0 | 1 |
+
+## Shifting
+
+Notice how the shifting of positive numbers effected the number.
+Left shift will multiply the number by two. The right shift will divide the number by two and floor it.
+
+|Shift | Number | negative | 2^6 <br> =64| 2^5 <br> =32| 2^4 <br> =16| 2^3 <br> =8| 2^2 <br> =4| 2^1 <br> =2| 2^0 <br> =1|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|Left Shift| __46__ | 0 | 0 | 0 | 1 | 0 | 1 | 1 | 1 |
+|No Shift| __23__ | 0 | 0 | 1 | 0 | 1 | 1 | 1 | 0 |
+|Right Shift| __11__ | 0 | 0 | 0 | 0 | 1 | 0 | 1 | 1 |
+
+But what about __negative numbers__?
+There are two shifts. Logical and arithmetic right shift. The __Logical__ right shift will shift everything to the right and will fill the beginning with a zero to make it positive. Whereas the __Arithmetic__ right shift will fill the number with the negative value and shift all values to the right. 
+
+|Shift | Number | negative | 2^6 <br> =64| 2^5 <br> =32| 2^4 <br> =16| 2^3 <br> =8| 2^2 <br> =4| 2^1 <br> =2| 2^0 <br> =1|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|No Shift| __-23__ | 1 | 1 | 1 | 0 | 1 | 0 | 0 | 0 |
+|Logical (Right Shift)| __116__ | 0 |  1 | 1 | 1 | 0 | 1 | 0 | 0 |
+|Arithmetic (Right Shift)| __-12__ | 1 | 1 | 1 | 1 | 0 | 1 | 0 | 0 |
