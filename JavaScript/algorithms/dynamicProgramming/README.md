@@ -145,6 +145,27 @@ console.log(fibonacci(6));
 console.log(fibonacci(100));
 ```
 
+### How to solve a Dynamic Programming Problem ?
+
+Steps to solve a DP
+1. Identify if it is a DP problem
+2. Decide a state expression with least parameters
+3. Formulate state relationship
+4. Do tabulation (or add memoization)
+
+__1 How to classify a problem as a DP problem?__
+* Typically, all problems that require to maximize or minimize certain quantity or counting problems that say to count the arrangements under certain conditions or certain probability problems can be solved by using Dynamic Programming.
+* All dynamic programing problems satisfy the overlapping subproblems property and most of the classic dynamic problems also satisfy the optimal substructure property. Once, we observe these properties in a given problem, be sure that it can be solved using DP.
+
+__2 Deciding the State__
+__State__ A state can be defined as the set of parameters that can uniquely identify a certain position or standing in the given problem. This set of parameters should be as small as possible to reduce state space.
+
+__3 Formulating a relation among the states__
+Find the patterns when you're formulating the state. The hardest part of for solving a DP problem and requires a lot of intuition, observation and practice.
+
+__4 Adding memoization or tabulation for the state__
+This is the easiest part of dynamic programming solution. We just need to store the state answer so that next time that state is required, we can directly use it from our memory.
+
 ### Practice Problem: Binomial Coefficient
 
 __Combinations__ - When forming permutations, the order in which the elements are listed is important, but there are many cases when we are interested only in which elements are selected and we do not care about the order. For example, when playing poker, a hand consists of five cards dealt from a standard 52-card deck. The order in which the cords arrive in a hand does not matter, only the final selection of the five cards are important. When order is not important, the selection is called a combination rather than a permutation. More carefully, an r- combination from an n-set is an r-subset of the n-set. In other words, an r-combination of an n-set is an unordered selection of r distinct elements from the n-set.
