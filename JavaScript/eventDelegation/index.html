@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style>
+    .red {
+      color: red;
+    }
+  </style>
+  <body>
+    <ul class="list">
+      <li>first</li>
+      <li>second</li>
+      <li>third</li>
+    </ul>
+
+    <script>
+      document.querySelector(".list").addEventListener("click", (e) => {
+        e.target.classList.toggle('red')
+      })
+    </script>
+  </body>
+</html>
