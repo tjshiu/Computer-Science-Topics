@@ -4,7 +4,7 @@
 
 [try...catch](#try-catch)
 
-[Custom Errors](#custom-errors,-extending-error)
+[Custom Errors](#custom-errors-extending-error)
 
 ## new
 
@@ -117,7 +117,7 @@ function func() {
 }
 ```
 
-## Custom Errors, extending Error
+## Custom Errors extending Error
 * We can inherit from Error and other built-in error classes normally, just need to take care of name property and don’t forget to call super.
 * Most of the time, we should use instanceof to check for particular errors. It also works with inheritance. But sometimes we have an error object coming from the 3rd-party library and there’s no easy way to get the class. Then name property can be used for such checks.
 * Wrapping exceptions is a widespread technique when a function handles low-level exceptions and makes a higher-level object to report about the errors. Low-level exceptions sometimes become properties of that object like err.cause in the examples above, but that’s not strictly required.
