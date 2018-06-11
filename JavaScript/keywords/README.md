@@ -1,10 +1,10 @@
 # Keywords
 
-[new](#`new`)
+[new](#new)
 
-[try...catch](#`try...catch`)
+[try...catch](#try...catch)
 
-## `new`
+## new
 
 The `new` keyword invokes a function in a special way. Functions invoked using the  `new` keyword are called __constructor function__.
 
@@ -26,4 +26,4 @@ let actualDog = new Animal(); //invoking a constructor function
 console.log(actualDog); // { legs: 4 }
 ```
 
-## `try...catch`
+## try...catch
