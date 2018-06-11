@@ -2,7 +2,7 @@
 
 [new](#new)
 
-[try...catch](#try...catch)
+[try...catch](#try-catch)
 
 ## new
 
@@ -26,4 +26,4 @@ let actualDog = new Animal(); //invoking a constructor function
 console.log(actualDog); // { legs: 4 }
 ```
 
-## try...catch
+## try catch
