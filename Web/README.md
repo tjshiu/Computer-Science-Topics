@@ -12,6 +12,8 @@ __Topics__
 
 [XXS](#xss)
 
+[CSRF](#csrf-attacks)
+
 
 ## HTTP - Methods
 | S.N. | Method and Description | Other Notes|
@@ -93,3 +95,25 @@ XSS attack needs three actors: __the website, the victim__ and __the attacker__.
 2. The victim requests the web page from the website
 3. The website serves the victim’s browser the page with the attacker’s payload as part of the HTML body.
 4. The victim’s browser will execute the malicious script inside the HTML body. In this case it would send the victim’s cookie to the attacker’s server. The attacker now simply needs to extract the victim’s cookie when the HTTP request arrives to the server, after which the attacker can use the victim’s stolen cookie for impersonation.
+
+## CSRF Attacks
+
+Cross Site Request Forgery (CSRF), Sea Surf, or XSRF for short, is considered a sleeping giant in the world of web security. It is the most common attack that is regularly exploited, which is why it has secured its spot on OWASP's top 10 several times in a row. That being said, an exploited Cross-site Scripting vulnerability will always trump any CSRF vulnerability, as CSRF attacks have a major limitation. CSRF only allows for state changes to occur and therefore cannot cater attacks that require the attacker receiving the contents of the HTTP response.  
+
+1. User logs into his bank
+2. Bank gives a session token
+3. Hacker sends a malicious link, tricking the user to a fake link pointing to the bank
+4. User clicks on the link, and hacker has access to session token
+
+What happened? The request to the bank was forged as it used the same session token of the user, which did not require the user to log in again.
+
+Two main parts for executing a CSRF attack, the first part being to trick the victim into clicking a link or loading up a page.
+1. Trick the victim into clicking a link or loading up a page.
+2. Send a crafted request in the victim's browser, that will send a legitimate looking request to the web application.
+
+CSRF attack takes advantage of the fact that the browser sends the Cookie to the web application automatically with each and every request.
+
+### Prevention
+
+* CSRF Token or a Synchronizer Token - challenge token that is associated with a particular user and can be found as a hidden value in every state changing form
+* Same site Cookies - request is being made from the same origin that is related to the Cooking being sent, but not all browsers support this.
