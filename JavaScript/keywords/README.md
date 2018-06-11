@@ -27,3 +27,76 @@ console.log(actualDog); // { legs: 4 }
 ```
 
 ## try catch
+
+`try...catch` allows us to "catch" errors and instead of dying, do something more reasonable.
+
+### "try...catch" syntax
+There are two main blocks `try`, and then `catch`. Please note that `try...catch` only works for runtime errors. `try...catch` should be valid JavaScript. It won't work if the code is syntactically wrong. Also `try...catch` works __synchronously__. If an exception happens in a 'scheduled' code, like a `setTimeout`, then `try...catch` won't catch it.
+
+``` JavaScript
+try {
+  // code
+} catch (err) {
+  // error handling
+}
+```
+
+__synchronously__ - The try and catch should be placed inside the setTimeout for it to execute properly for the function.
+```JavaScript
+try {
+  setTimeout(function () {
+    noSuchVariable; //script will die here
+  }, 1000);
+} catch (e) {
+  alert ("won't work");
+}
+```
+
+### `catch`
+
+The error object inside the `catch` block has two main properties:
+* `name` - Error name: For an undefined variable that's "referenceError"
+* `message` - Textual messages about error details. There are other non-standard properties available in most environments. One of most widely used and supported is:
+* `stack` - Current call stack: a string with information about the sequence of nested calls that led to the error. Used for debugging purposes.
+
+``` JavaScript
+try {
+  lalala; // error, variable is not defined!
+} catch(err) {
+  alert(err.name); // ReferenceError
+  alert(err.message); // lalala is not defined
+  alert(err.stack); // ReferenceError: lalala is not defined at ...
+
+  // Can also show an error as a whole
+  // The error is converted to string as "name: message"
+  alert(err); // ReferenceError: lalala is not defined
+}
+```
+
+### Throwing our own errors
+
+`throw` operator generates an error. It needs an error object.
+
+``` JavaScript
+let json = '{ "age": 30 }'; // incomplete data
+
+try {
+  let user = JSON.parse(json); // <-- no errors
+
+  if (!user.name) {
+    throw new SyntaxError("Incomplete data: no name"); // (*)
+  }
+
+  alert( user.name );
+
+} catch(e) {
+  alert( "JSON Error: " + e.message ); // JSON Error: Incomplete data: no name
+}
+```
+
+### Rethrowing
+If we don't like the error, we can rethrow it. 
+
+1. Catch gets all errors
+2. In `cacth(err) {...}` block we analyze the error object `err`
+3. If we don't know how to handle it, then we do `throw err`
