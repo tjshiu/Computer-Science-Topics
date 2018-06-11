@@ -95,8 +95,22 @@ try {
 ```
 
 ### Rethrowing
-If we don't like the error, we can rethrow it. 
+If we don't like the error, we can rethrow it.
 
 1. Catch gets all errors
 2. In `cacth(err) {...}` block we analyze the error object `err`
 3. If we don't know how to handle it, then we do `throw err`
+
+### try...catch...finally
+There is a last code clause `finally` and if it exists, it runs in all cases.
+
+``` JavaScript
+function func() {
+  // start doing something that needs completion (like measurements)
+  try {
+    // ...
+  } finally {
+    // complete that thing even if all dies
+  }
+}
+```
