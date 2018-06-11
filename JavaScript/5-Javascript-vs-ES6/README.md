@@ -206,3 +206,6 @@ var myCircle = new Circle('123', '5px', '10px', 5); // create new instance
 console.log(myCircle.toString()); //Circle > Shape(123)
 console.log(myCircle.getLocation()); // {x: '5px', y: '10px'}
 ```
+
+__5. Strict Mode__
+Strict Mode ("use strict") helps identify common issues (or "bad" parts) and also helps with "securing" JavaScript. In ES5, the Strict Mode is optional but in ES6, it's needed for many ES6 features. So most people and tools like babel automatically add "use strict" at the top of the file putting the whole JS code in strict mode and forcing us to write better JavaScript.
