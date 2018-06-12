@@ -2,17 +2,13 @@
 
 __Topics__
 
-[HTTP-Methods](#http---methods)
-
-[HTTP Status Codes - Top 10 codes](#http-status-codes)
-
-[HTTP vs HTTPS](#http-vs-https)
-
-[Difference between localStorage, sessionStorage, session, and cookies](#difference-between-localStorage,-sessionStorage,-session,-and-cookies)
-
-[XXS](#xss)
-
-[CSRF](#csrf-attacks)
+* [HTTP-Methods](#http---methods)
+* [HTTP Status Codes - Top 10 codes](#http-status-codes)
+* [HTTP vs HTTPS](#http-vs-https)
+* [Difference between localStorage, sessionStorage, session, and cookies](#difference-between-localStorage,-sessionStorage,-session,-and-cookies)
+* [XXS](#xss)
+* [CSRF](#csrf-attacks)
+* [AJAX](#ajax)
 
 
 ## HTTP - Methods
@@ -117,3 +113,19 @@ CSRF attack takes advantage of the fact that the browser sends the Cookie to the
 
 * CSRF Token or a Synchronizer Token - challenge token that is associated with a particular user and can be found as a hidden value in every state changing form
 * Same site Cookies - request is being made from the same origin that is related to the Cooking being sent, but not all browsers support this.
+
+## AJAX
+
+* Update a web page without reloading the page
+* Request data from a server - after the page has loaded
+* Receive data from a server - after the page has loaded
+* Send data to a server - in the background
+
+AJAX = __A__ syncrhonous __J__ avaScript __A__ nd __X__ ML
+_Note that the name is misleading, data can also be transported by plain text or JSON text_
+
+* It is __NOT__ a programming language
+
+AJAX uses a combination of:
+* A browser built-in XMLHttpRequest object (to request data from a web server)
+* JavaScript and HTML DOM (to display or use the data)
