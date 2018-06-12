@@ -115,17 +115,29 @@ CSRF attack takes advantage of the fact that the browser sends the Cookie to the
 * Same site Cookies - request is being made from the same origin that is related to the Cooking being sent, but not all browsers support this.
 
 ## AJAX
+AJAX = __A__ syncrhonous __J__ avaScript __A__ nd __X__ ML
+_Note that the name is misleading, data can also be transported by plain text or JSON text_
+
+AJAX uses of the XMLHttpRequest object to communicate with servers. It can send and receive information in many formats. The most appealing part of AJAX is that it's "asynchronous" nature, which means it can communicate with the server, exchange data, and update the page without having to refresh the page. 
 
 * Update a web page without reloading the page
 * Request data from a server - after the page has loaded
 * Receive data from a server - after the page has loaded
 * Send data to a server - in the background
-
-AJAX = __A__ syncrhonous __J__ avaScript __A__ nd __X__ ML
-_Note that the name is misleading, data can also be transported by plain text or JSON text_
-
 * It is __NOT__ a programming language
 
 AJAX uses a combination of:
 * A browser built-in XMLHttpRequest object (to request data from a web server)
 * JavaScript and HTML DOM (to display or use the data)
+
+AJAX allows web pages to be updated asynchronously by exchanging data with a web server behind the scenes. This means that is is possible to update parts of a webpage without reloading the whole page.
+
+### How AJAX works:
+
+1. An event occurs in a web page (the page is loaded, a button is clicked)
+2. An XMLHttpRequest object is created by JavaScript
+3. The XMLHttpRequest object sends a request to a web server.
+4. The server processes the request.
+5. The server sends a response back to the web page
+6. The response is read by JavaScript
+7. Proper action (like page update) is performed by JavaScript
