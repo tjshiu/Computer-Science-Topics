@@ -1,5 +1,9 @@
 # Binary Heaps
 
+A heap is a specific tree based data structure in which all the nodes of the tree are in a specific order. There can be a number of children, but the most commonly used heap is a binary heap (where there are at most 2 children).
+
+In a binary heap, if the heap is a complete binary tree with N nodes, then it has smallest possible height which is log<sup>2</sup>N.
+
 A heap is a binary tree with two special properties:
 1. It must have all of the nodes in a specific order - the parent nodes must either be greater than or equal to the value of the children nodes, or less than or equal to the value of its children nodes. This is called the __heap-order property__.
 2. The shape must be complete (complete tree) - In other words, one entire level of nodes, must all have children added to them before they can have grandchildren nodes.
