@@ -14,10 +14,6 @@ Important notes:
 1. We can always have duplicate values in a heap - there's no restriction against it.
 2. A heap doesn't follow the rules of a binary search tree; the left node doesn't have to be smaller than the right node.
 
-## Min Heap
-
- * Root node is the smallest or equal to all of the children nodes(always the minimum)
-
 ### Insertion
 
 * Top to bottom and from left to right
@@ -38,11 +34,21 @@ Important notes:
 * leftChild = (2 * index) + 1
 * rightChild = (2 * index) + 2
 
+## Min Heap
+
+* Root node is the smallest or equal to all of the children nodes(always the minimum)
 
 ## Max Heap
 
 * Root node is always greater than or equal to the value of its children nodes.
 
-Binary heap as a method to store a collection of objects in such a way that the smallest element can be quickly found.
+## Example:
+``` JavaScript
+//        6
+//      /   \
+//     4     5
+//   / \    / \
+//  3   2  0   1
 
-* Uses a tree data structure.
+let maxHeap = [6, 4, 5, 3, 2, 0, 1];
+```
