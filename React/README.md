@@ -68,3 +68,9 @@ __Most Common Use Case:__ Used instead of componentWillReceiveProps on a compone
 __Can call setState:__ No.
 
 ## componentDidUpdate
+
+`componentDidUpdate` can do the same stuff as `componentDidMount`. We can make changes after the component updates. 
+
+__Most Common Use Case:__ Updating the DOM in response to prop or state changes.
+
+__Can call setState:__ Yes.
