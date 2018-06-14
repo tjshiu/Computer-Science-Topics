@@ -24,3 +24,22 @@ There are some fun things that you couldn't do when there was no component to pl
 __Most Common Use Case:__ Starting AJAX calls to load in data for your component.
 
 __Can call setState:__ YES.
+
+## componentWillReceiveProps
+
+Before our component does anything with the new props, componentWillReceiveProps is called, with the next props as the argument. One thing to note is that componentWillReceiveProps is not called with the initial render. There are no old props, and thus, it won't be called. 
+
+``` JavaScript
+componentWillReceiveProps(nextProps) {
+  if (parseInt(nextProps.modelId, 10) !== parseInt(this.props.modelId, 10)) {
+    this.setState({ postsLoaded: false })
+    this.contentLoaded = 0;
+  }
+}
+```
+
+Here is wha
+
+__Most Common Use Case:__ Acting on particular prop changes to trigger state transitions.
+
+__Can call setState:__ YES.
