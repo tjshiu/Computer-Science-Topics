@@ -19,4 +19,8 @@ __HERE__ is where you __load your data__. As from Tyler McGinnis "You can’t gu
 There are some fun things that you couldn't do when there was no component to play with:.
 1. Draw on a <canvas> element that you just rendered
 2. Initialize a masonry grid layout from a collection of elements
-3. Add event listeners. 
+3. Add event listeners.
+
+__Most Common Use Case:__ Starting AJAX calls to load in data for your component.
+
+__Can call setState:__ YES.
