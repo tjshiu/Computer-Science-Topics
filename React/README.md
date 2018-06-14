@@ -1,5 +1,7 @@
 # React Lifecycle Methods - how and when to use them
 
+Ideally, we wouldn't use lifecycle methods and all the rendering issues would be controlled through the state and props. However, sometimes you need a little more control. 
+
 ## componentWillMount
 
 It's a little bit of a dud because there is no component to play with yet, so you can't do anything involving the DOM. Also, nothing has changed since your component's constructor was called, which is where you should be setting up your component's default configuration away.
@@ -69,8 +71,16 @@ __Can call setState:__ No.
 
 ## componentDidUpdate
 
-`componentDidUpdate` can do the same stuff as `componentDidMount`. We can make changes after the component updates. 
+`componentDidUpdate` can do the same stuff as `componentDidMount`. We can make changes after the component updates.
 
 __Most Common Use Case:__ Updating the DOM in response to prop or state changes.
 
 __Can call setState:__ Yes.
+
+## componentWillUnmount
+
+This is any last minute requests before the component goes away. Here we can cancel any outgoing network requests, or remove all event listeners associated with the component. Basically, clean up anything to do that solely involves the component in questions.
+
+__Most Common Use Case:__ Cleaning up any leftover debris from your component.
+
+__Can call setState:__ No.
