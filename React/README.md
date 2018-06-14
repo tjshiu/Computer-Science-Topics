@@ -46,7 +46,7 @@ __Can call setState:__ YES.
 
 ## shouldComponentUpdate
 
-This should always return a boolean - an answer to the question of, "should I re-render?" The default is always returns true. However, if you're worried about wasted renders and other nonsense-- shouldComponentUpdate is an awesome place to improve performance. Use this with caution because if you forget about it, your React component will not update normally. 
+This should always return a boolean - an answer to the question of, "should I re-render?" The default is always returns true. However, if you're worried about wasted renders and other nonsense-- shouldComponentUpdate is an awesome place to improve performance. Use this with caution because if you forget about it, your React component will not update normally.
 
 ``` JavaScript
 shouldComponentUpdate(nextProps, nextState) {
@@ -58,3 +58,13 @@ shouldComponentUpdate(nextProps, nextState) {
 __Most Common Use Case:__ Controlling exactly when your component will re-render.
 
 __Can call setState:__ No.
+
+## componentWillUpdate
+
+Very similar to componentWillReceiveProps, but you are not allowed to call `this.setState`. If you were using shouldComponentUpdate AND needed to do something when props change, componentWillUpdate makes sense. However, it is not going to give a lot of additional utility.
+
+__Most Common Use Case:__ Used instead of componentWillReceiveProps on a component that also has shouldComponentUpdate (but no access to previous props)
+
+__Can call setState:__ No.
+
+## componentDidUpdate
