@@ -50,6 +50,7 @@ There are two shifts. Logical and arithmetic right shift. The __Logical__ right 
 
 ### Shift operators
 a << b
+
 a >> b
 
 ## bit-wise operators
@@ -60,19 +61,26 @@ a >> b
 
 ### AND
 0 & 0 => 0
+
 0 & 1 => 0
+
 1 & 1 => 1
 
 ### OR
 0 | 0 => 0
+
 0 | 1 => 1
+
 1 | 1 => 1
 
 ### NOT
 ~0 => -1
+
 ~1 => -2
 
 ### XOR
 0 ^ 0 => 0
+
 0 ^ 1 => 1
+
 1 ^ 1 => 0
