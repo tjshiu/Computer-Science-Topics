@@ -115,8 +115,8 @@ CSRF attack takes advantage of the fact that the browser sends the Cookie to the
 * Same site Cookies - request is being made from the same origin that is related to the Cooking being sent, but not all browsers support this.
 
 ## AJAX
-AJAX = __A__syncrhonous __J__avaScript __A__nd __X__ML
-_Note that the name is misleading, data can also be transported by plain text or JSON text_
+AJAX = <b>A</b>synchronous <b>J</b>avaScript <b>A</b>nd <b>X</b>ML
+_Note that the name is misleading, data can also be transported by plain text or JSON text. Also XML was very important for a very long time. JSON has recently become more popular_ 
 
 AJAX uses of the XMLHttpRequest object to communicate with servers. It can send and receive information in many formats. The most appealing part of AJAX is that it's "asynchronous" nature, which means it can communicate with the server, exchange data, and update the page without having to refresh the page.
 
