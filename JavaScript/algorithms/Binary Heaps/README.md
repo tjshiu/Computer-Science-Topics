@@ -19,6 +19,10 @@ Important notes:
 * Top to bottom and from left to right
 * Insert the element there and then bubble up until all rules are followed in the __heap-order property__.
 
+### Linear Time Build Heap
+
+Heap has O(n) insertion
+
 ### Removing the minimum element
 
 * Take the minimum out

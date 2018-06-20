@@ -9,6 +9,8 @@ __Topics__
 * [XXS](#xss)
 * [CSRF](#csrf-attacks)
 * [AJAX](#ajax)
+* [Origin](#origin)
+* [Cross-Origin Resource Sharing (CORS)](#cross-origin-resource-sharing)
 
 
 ## HTTP - Methods
@@ -116,7 +118,7 @@ CSRF attack takes advantage of the fact that the browser sends the Cookie to the
 
 ## AJAX
 AJAX = <b>A</b>synchronous <b>J</b>avaScript <b>A</b>nd <b>X</b>ML
-_Note that the name is misleading, data can also be transported by plain text or JSON text. Also XML was very important for a very long time. JSON has recently become more popular_ 
+_Note that the name is misleading, data can also be transported by plain text or JSON text. Also XML was very important for a very long time. JSON has recently become more popular_
 
 AJAX uses of the XMLHttpRequest object to communicate with servers. It can send and receive information in many formats. The most appealing part of AJAX is that it's "asynchronous" nature, which means it can communicate with the server, exchange data, and update the page without having to refresh the page.
 
@@ -141,3 +143,35 @@ AJAX allows web pages to be updated asynchronously by exchanging data with a web
 5. The server sends a response back to the web page
 6. The response is read by JavaScript
 7. Proper action (like page update) is performed by JavaScript
+
+## Origin
+
+Two pages have the same origin if the protocol, port (if one is specified), and host are all the same for both pages. This is sometimes called the "scheme/host/port/tuple"
+Remember the three:
+1. Same Protocal
+2. Same Port (if specified)
+3. Same Host (or domain)
+
+example below of same origins and not same origins with:
+
+`http://store.company.com/dir/page.html`:
+|URL|Outcome| Reason|
+| http://store.company.com/dir2/other.html | success | |
+| http://store.company.com/dir/inner/another.html | success | |
+| https://store.company.com/secure.html | failure | Different protocol |
+| http://store.company.com:81/dir/etc.html | failure | Different port |
+| http://news.company.com/dir/other.html | failure | Different host |
+
+There can be inherited origins, change the origin, and cross-origin network access.
+
+## Cross-Origin Resource Sharing
+
+CORS, Cross-Origin Resource Sharing is a mechanism that uses additional HTTP headers to tell a browser to let a web application running at one origin (domain) have permission to access elected resources from a server at a different origin. A web application makes a cross-origin HTTP request when it requests a resources that has a different origin (host, protocol, port) than its own origin.
+
+__What requests use CORS?__
+* `XMLHttpRequest`
+* Web fonts
+* WebGL textures
+* Images/video frames drawn to a canvas using drawImage
+* Stylesheets (for CSSOM access)
+* Scripts
