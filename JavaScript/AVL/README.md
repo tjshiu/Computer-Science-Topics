@@ -47,50 +47,6 @@ Solution is to rotate the grandparent of the problem. We will do a left rotation
 //             8   12
 ```
 
-Let's add a 9! This is tricky! There will be a left rotation of the parent and then following a right rotation of the grandparent.
-``` JavaScript
-//            4
-//          /   \
-//         2     10
-//              /  \
-//             8   12
-//              \
-//               9
-```
-
-1. Left rotate the parent ("8")
-``` JavaScript
-//            4
-//          /   \
-//         2     10
-//              /  \
-//             9   12
-//            /
-//           8
-```
-
-2. Right rotation of the (prev) grandparent ("10")
-``` JavaScript
-//            4
-//          /   \
-//         2     9
-//              /  \
-//             8   10
-//                  \
-//                  12
-```
-
-HOWEVER.. the tree isn't balanced. Sometimes the rotation will cause issues in the above tree.
-``` JavaScript
-//            4
-//          /   \
-//         2     9
-//              /  \
-//             8   10
-//                  \
-//                  12
-```
-
 
 ## Right Rotation
 How about another example:
