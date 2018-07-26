@@ -1,6 +1,6 @@
 # Rails Overview
 
-## Relational Model
+## Relational Model and Relational Database Management System
 - Model data in the form of relations or tables. Relational model represents how data is stored in Relational Databases. A relational database stores data in the form of relations (tables). Consider a relation STUDENT with different attributes: ID, NAME, MAJOR, AGE. 
 
 __STUDENT__
@@ -35,3 +35,11 @@ __Enrollment__
 * __NULL Values__ Value which is not known or unavailable is called NULL value. Represented by blank space. 
 
 There may be constraints on the relational model, such as name cannot be null. 
+
+__RDBMS (Relational Database Managmeent System)__ Helps us access our relational model and the information. There are many different versions such as PostgreSQL and SQLite3. Interactions are similiar for all of them, but what's different is what's going on under the hood. 
+
+__SQLite3__ - When you are limited to how much memory can be stored, SQLite3 is great for space. It is light weight and serverless. It's great for mobile phones. It's not great for production web applications. The entire databse is stored in a file. It can't handle multiple requests. 
+
+__Data Definition Language__ - describes structure of tables and where we build our tables. We can __create__ a table and __drop__ a table. 
+
+__Data Manipulation Language__ - allows us to add/edit/delete data in the table. Such as SELECT, INSERT, UPDATE, DELETE. 
