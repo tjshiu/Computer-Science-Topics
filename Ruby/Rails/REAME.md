@@ -1,6 +1,7 @@
 # Rails Overview
 
-## Relational Model and Relational Database Management System
+## Database
+### Relational Model and Relational Database Management System
 - Model data in the form of relations or tables. Relational model represents how data is stored in Relational Databases. A relational database stores data in the form of relations (tables). Consider a relation STUDENT with different attributes: ID, NAME, MAJOR, AGE. 
 
 __STUDENT__
@@ -43,3 +44,9 @@ __SQLite3__ - When you are limited to how much memory can be stored, SQLite3 is 
 __Data Definition Language__ - describes structure of tables and where we build our tables. We can __create__ a table and __drop__ a table. 
 
 __Data Manipulation Language__ - allows us to add/edit/delete data in the table. Such as SELECT, INSERT, UPDATE, DELETE. 
+
+### ORM - Object Relational Mapping
+
+* Object-relational mapping is a technique for storing, retrieving, updating, and deleting from an object-oriented program in a relational database. 
+
+
