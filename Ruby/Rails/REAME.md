@@ -5,6 +5,8 @@
 - Model data in the form of relations or tables. Relational model represents how data is stored in Relational Databases. A relational database stores data in the form of relations (tables). Consider a relation STUDENT with different attributes: ID, NAME, MAJOR, AGE. 
 
 __STUDENT__
+
+
 | ID | NAME | MAJOR | AGE |
 |---|---|---|---|
 | 1 | William | Accounting |  | 
@@ -12,6 +14,8 @@ __STUDENT__
 | 3 | Albertine | Biology | 23 | 
 
 __CLASSES__
+
+
 | ID | NAME | INSTRUCTOR |
 |---|---|---|
 | 2000 | Language Studies | Routon |
@@ -19,6 +23,8 @@ __CLASSES__
 | 2003 | Sociology | Johnson | 
 
 __Enrollment__
+
+
 | ID | STUDENTID | CLASSID | GRADES | 
 |---|---|---|---|
 | 10 | 1 | 2000 |
