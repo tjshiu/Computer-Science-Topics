@@ -27,10 +27,10 @@ __Enrollment__
 
 | ID | STUDENTID | CLASSID | GRADES | 
 |---|---|---|---|
-| 10 | 1 | 2000 |
-| 11 | 1 | 2003 |
-| 12 | 2 | 2000 |
-| 13 | 3 | 3000 |
+| 10 | 1 | 2000 | A |
+| 11 | 1 | 2003 | B |
+| 12 | 2 | 2000 | A |
+| 13 | 3 | 3000 | A |
 
 * __Attributes__: properties that define a relation, e.g. NAME, or AGE
 * __Relation Schema__: A relation schema represents name of the relation with its attributes, e.g. STUDENT (ID, NAME, MAJOR, AGE) is a relational schema for Student, if a schema has more than 1 relation, it's called Relational Schema. 
