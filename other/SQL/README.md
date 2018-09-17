@@ -4,6 +4,15 @@ __SQL__ is a language for querying the database. It stands for: __Structered Que
 
 The world is full of data. Database helps us store data and helps us add, modify, and querying the data. A popular database is a relational database. __Relational database__ store data in a table. The row stores data about an item, and the columns describe properties about that item. It makes it particularly easy to form relationships within a table. For example we might have a table for people and then we have another table for their things. It's more efficient way of storage instead of having a huge table of everything.
 
+__Normalization__ is an approach of dividing tables into smaller components to reduce having duplicated data in many tables. This is by having a reference to their id's and points to their references to information.
+
+__Data Definition Language (DDL)__ - Create Table, Drop table
+
+__Data Manipulation _Language (DML)__ - Select, Insert, Delete, Update
+
+__Subqueries__ A query within a query and it must be wrapped in parenthesis. Often used with a WHERE or IN/NOT IN clause.
+
+__Correlated Subqueries__ A subquery that relies on the outer query as well to complete the query result. This can be dependent on the column or alias. This inner subquery is run for each of the rows of the outer query. - Difficult to optimize this query!
 
 ## Example
 
