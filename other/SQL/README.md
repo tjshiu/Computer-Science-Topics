@@ -74,3 +74,11 @@ GROUP BY aisle
 | 1 | 30 |
 
 Noticed how it only included the cherries in the 1st aisle when we where using __where__. While the __having__ clause also included bananas because having only in concerned about the groups that are created.
+
+### Something fun
+
+This code below adds a getter function to an object allowing us to console.log the object itself.
+``` JavaScript
+Object.defineProperty(Object.prototype, 'log', {
+    get() { console.log(this) }});
+```
